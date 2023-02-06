@@ -1,0 +1,61 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!--<head>-->
+
+  <!--
+  <link rel="stylesheet" href="app.component.css"> {{ prev_oper }} {{ oper }}
+  <script src="app.component.js"></script>
+  </head><body>-->
+<div class="cal_grid">
+  <div class="output">
+    <div class="prev_oper"> {{result}} {{eq_sign}}</div>
+    <div class="curr_oper"> {{ curr_oper }} </div>
+  </div>
+
+  <button  class="buts"  id="graybut" class="Sopera" value="per" (click)="perform_single('per')">%</button>
+  <button class="buts" id="graybut" class="lclear" (click)="clear()">CE</button>
+  <button class="buts" id="graybut" class="lclear" (click)="clear()">C</button>
+  <button class="buts" id="graybut" class="del" (click)="del()"> <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC">
+  </button>
+  <button class="buts" id="graybut" class="Sopera" value="1/x" (click)="perform_single('frac')"><span>
+    <sup>1</sup>
+  </span>
+  <span>/</span>
+  <span class="x-sign">
+    <sub><em>x</em></sub>
+  </span></button>
+  <button class="buts" id="graybut" class="Sopera" value="x^2" (click)="perform_single('sqr')">X<sup>2</sup></button>
+  <button class="buts" id="graybut" class="Sopera" value="x^0.5" (click)="perform_single('sqrt')" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABP0lEQVRYR+3V4S0FQRQF4O9VgApQATrQASpABXSAClABOqCCRwWoABWgAnKTnWSzeV5mdkf2z55fm83sPWfPuXfuzMiYjcxvEjA5UNuBd6z/0dgLuWoK2MV8yVT9u4BbHOIC57njXcuBVXw2pJuIKLJQS8ARbvCA/Szm5lAtAS/YwjEiimzUELCNZ3wjoihCDQFXOME1TovYqbILvrCCHUQURRjqQGq+V0QUxVgm4KdVLcYqxquLe+z1ab5UKFdAnO92+AbemkJriCiKkRNBsrnrQjTcJe4QZ3ohR0AUTkum7UJ6d4CIohdyBXRdSIvnAxFFb+QKaLsQfxzXbfHiWaSyREBy4bEZubj1ihbPUAFBGLnHpRN4QkQxCCUOBFHs+bOGsXjxDHUgvk8upOdBfx8flzowmLBbYBIwOTC6A7+1/zEhMa617wAAAABJRU5ErkJggg=="></button>
+  <button class="buts" id="graybut" class="operations" value="÷" (click)="append_oper('div')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAo0lEQVRYR+2VSxGDMBRFTxTUAkioklrAQSVAHSChjmqhdYCDMm8mCz7DIp/yurisQ+6Zk5u8gPMXnPMRgAyUGBiBWyzxE3jkFDoXwMLvm0ADGFIhcgEm4AJcY+ALeAOtJ8AHaM4CMNW95xFYtkF0ixImn7/9m9uBVNOH6wVwZOBbzfF6o13e3wL8SMB+W5WwxICmoaahpmGVx6rkGgpABqoYmAH2Lh4hfK3KfwAAAABJRU5ErkJggg==" width="25" height="25"></button>
+  <button class="buts" id="nums" class="number" value="7" (click)="append_num('7')">7</button>
+  <button class="buts" id="nums" class="number" value="8" (click)="append_num('8')">8</button>
+  <button class="buts" id="nums" class="number" value="9" (click)="append_num('9')">9</button><!--num_click("9")-->
+  <button class="buts" id="graybut" class="operations" value="×" (click)="append_oper('×')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABBUlEQVRYR+2W6w3CMAyErxuwCYwAG7AJjAATMQKMUDZhBHQSQaFqYp8DqpDSn2nj+3J+NAMWfoaF9dEBugN/4cAewA3AQ+yYFYADgHNtn+UAxS8ARgA7AYLiVwCbF8CpBGEBMBBPvxYgcvE7gG0N3AIguAIhiTO4B8ALIYsrABZESFwFKEFwPRWcmfNpMXpTkO+b1gTfsdpl8YgDCSSH4FpIvBUg2c446px4OxpNQZ5zBlPmxEcZqABz1c6A6rAKOVBrNWVYhRzw9HkIwpMCj/hcd7gK0wJQxEMQFkD6Hat9nqeD94Hw75inarmQHGviLYNIvByVP7dS8DWh6I2oA3QHfu7AEzfHWCF+OOmJAAAAAElFTkSuQmCC" width="25" height="25"></button>
+  <button class="buts" id="nums" class="number" value="4" (click)="append_num('4')">4</button>
+  <button class="buts" id="nums" class="number" value="5" (click)="append_num('5')">5</button>
+  <button class="buts" id="nums" class="number" value="6" (click)="append_num('6')">6</button>
+  <button class="buts" id="graybut" class="operations" value="-" (click)="append_oper('-')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAARElEQVRYR+3V0Q0AMAQFQPYfuh1A+ql8nAF4LhIZw5XD80MAAgQIECCwVuA0fcmy8EtgPEATQG279gYIECBAgACBbwIXi38CITaYSB4AAAAASUVORK5CYII=" width="25" height="25"></button>
+  <button class="buts" id="nums" class="number" value="1" (click)="append_num('1')">1</button>
+  <button class="buts" id="nums" class="number" value="2" (click)="append_num('2')">2</button>
+  <button class="buts" id="nums" class="number" value="3" (click)="append_num('3')">3</button>
+  <button class="buts" id="graybut" class="operations" value="+" (click)="append_oper('+')"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWUlEQVRYR+2WMQoAIAgA9f+PrsWmEMQSEa7Z8rzEUmle2pxfABhvYFkPpQtJb7TEAGAAAxgoM3AO/v1YXoPPm4TtANHKy64AAAxgAANjDERB3bjXXzEA8w1s3k4WIU0YaEoAAAAASUVORK5CYII=" width="25" height="25"></button>
+  <button class="buts" class="Sopera" value="+/-" (click)="perform_single('+/-')"><sup>+</sup><span>/</span><sub>-</sub></button>
+  <button class="buts" id="nums" class="number" value="0" (click)="append_num('0')">0</button>
+  <button class="buts" id="nums" class="number" value="." (click)="append_num('.')"><b>.</b></button>
+  <button class="buts" id="eqbut" (click)="calculate()"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVRYR+3U0Q0AMAQFQPYfuh1A+ikkPQMgF0/GcOXw/LAAAQIECLwETtOLLvPWLtAEUNs6wrUCUiAFBAgQIPCPwAX8vwQhcNJI5wAAAABJRU5ErkJggg==" width="25" height="25"></button>
+</div>
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!--<router-outlet></router-outlet>-->
+<!--</body>-->

@@ -1,0 +1,54 @@
+*,*::after,*::before{
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+.cal_grid{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4,100px);
+  /*grid-template-rows: minmax(120px,auto) repeat(6,100px);*/
+}
+.cal_grid button{
+  cursor: pointer;
+  font-size: 1.25rem;
+  border: 1px lightgray solid;
+  height: 3.5rem;
+  outline: none;
+  background-color: whitesmoke;
+}
+.output
+{
+  grid-column: 1/-1;
+  text-align: right;
+  background-color: whitesmoke;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-bottom: 50px;
+  padding-right: 10px ;
+  word-wrap: break-word;
+  word-break: break-all;
+  height: 7rem;
+  overflow: hidden;
+}
+.cal_grid #graybut{
+  background-color: silver;
+}
+.cal_grid #eqbut{
+  background-color: rgb(109, 109, 230);
+}
+.cal_grid button:hover{
+  background-color: gray;
+}
+.cal_grid >output >prev_oper{
+  color: rgb(51, 48, 48);
+  font-size: 1rem;
+  bottom: 100%;
+}
+.cal_grid .output .curr_oper{
+  color: black;
+  font-size: 2rem;
+}
+
